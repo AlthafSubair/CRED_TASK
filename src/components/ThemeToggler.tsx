@@ -8,7 +8,7 @@ const ThemeToggler = () => {
     <button
       type="button"
       onClick={toggleTheme}
-      className="font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+      className="font-medium z-50 text-gray-800 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
     >
       <span className="group inline-flex shrink-0 justify-center items-center size-9">
         {theme === 'light' ? (
