@@ -1,5 +1,6 @@
 "use client"
-import ThemeToggler from "@/components/ThemeToggler";
+import Header from "@/components/Header";
+
 
 
 export default function Home() {
@@ -22,9 +23,9 @@ export default function Home() {
       </div>
 
 
-
-      <div className="relative z-10 flex  px-4 w-full">
-        <ThemeToggler />
+      <div className="relative z-10 flex  md:px-4 w-full">
+        <Header />
+        
       </div>
 
 
