@@ -1,0 +1,54 @@
+"use client"
+import React, { useState } from 'react'
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+const ProgressBar = () => {
+
+   const [progress, setProgress] = useState(50); // Initial progress
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({ width: `${progress}%` });
+  }, [progress, controls]);
+
+  const handleIncrease = () => {
+    setProgress((prev) => Math.min(prev + 15, 100)); // Cap at 100%
+  };
+
+  return (
+    <div className='pb-2 flex flex-col justify-center items-center w-full px-12 gap-2'>
+        <h3 className='text-slate-500 mt-2'>Level 2</h3>
+
+        <div className="relative w-full dark:bg-gray-100 bg-gray-300 rounded-3xl h-3.5 group overflow-hidden">
+        <motion.div
+          initial={{ width: 0 }}
+          animate={controls}
+          transition={{ duration: 1, ease: "easeIn" }}
+          className="relative bg-gradient-to-r from-slate-800 via-violet-500 to-zinc-400 h-3.5 rounded-3xl"
+          role="progressbar"
+          aria-valuenow={progress}
+          aria-valuemin={0}
+          aria-valuemax={100}
+        >
+          {/* Tooltip on hover */}
+          <div className="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-semibold bg-black text-white px-2 py-0.5 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            {progress}%
+          </div>
+        </motion.div>
+      </div>
+
+      <p className='dark:text-gray-400 text-slate-400'><span className='dark:text-slate-300 text-gray-600'>{progress}</span>/100 XP</p>
+
+      {/* Button */}
+      {/* <button
+        onClick={handleIncrease}
+        className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+      >
+        Increase Progress +15%
+      </button> */}
+     
+    </div>
+  )
+}
+
+export default ProgressBar

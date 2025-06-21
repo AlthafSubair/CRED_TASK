@@ -10,11 +10,11 @@ const ThemeToggler = () => {
       onClick={toggleTheme}
       className="font-medium z-50 text-gray-800 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
     >
-      <span className="group inline-flex shrink-0 justify-center items-center size-10">
+      <span className="group inline-flex shrink-0 justify-center items-center sm:size-10 size-8">
         {theme === 'light' ? (
           // Moon icon (for switching to dark)
           <svg
-            className="shrink-0 size-5"
+            className="shrink-0 sm:size-5 size-4"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -30,7 +30,7 @@ const ThemeToggler = () => {
         ) : (
           // Sun icon (for switching to light)
           <svg
-            className="shrink-0 size-5"
+            className="shrink-0 sm:size-5 size-4"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
