@@ -3,65 +3,51 @@ import Image from 'next/image'
 
 const CrediCard = () => {
   return (
-<div className="w-96 h-56 m-auto bg-red-100 rounded-xl relative text-white shadow-2xl transition-transform transform hover:scale-110">
-            
-               <Image className='relative object-cover w-full h-full rounded-xl' fill src="/card-bg.png" alt="bg"/>
-                
-                <div className="w-full px-8 absolute top-8">
-                    <div className="flex justify-between">
-                        <div className="">
-                            <p className="font-light">
-                                Name
-                            </p>
-                            <p className="font-medium tracking-widest">
-                                Karthik P
-                            </p>
-                        </div>
+  <div className='w-full flex flex-col justify-between relative h-52 rounded-md text-white  overflow-clip bg-[linear-gradient(to_right,#e7029a_0%,#f472b6_80%)] px-4 py-4'>
 
-                       <Image className='w-14 h-14' width={56} height={56} alt="card-logo" src="/card-logo.png" />
+  {/* Top Right Circle */}
+  <div className='absolute -top-2 -right-10 w-28 h-28 bg-white/10 rounded-full z-10'></div>
 
-                       
-                    </div>
-                    <div className="pt-1">
-                        <p className="font-light">
-                            Card Number
-                        </p>
-                        <p className="font-medium tracking-more-wider">
-                            4642  3489  9867  7632
-                        </p>
-                    </div>
-                    <div className="pt-6 pr-6">
-                        <div className="flex justify-between">
-                            <div className="">
-                                <p className="font-light text-xs">
-                                    Valid
-                                </p>
-                                <p className="font-medium tracking-wider text-sm">
-                                    11/15
-                                </p>
-                            </div>
-                            <div className="">
-                                <p className="font-light text-xs">
-                                    Expiry
-                                </p>
-                                <p className="font-medium tracking-wider text-sm">
-                                    03/25
-                                </p>
-                            </div>
-    
-                            <div className="">
-                                <p className="font-light text-xs">
-                                    CVV
-                                </p>
-                                <p className="font-bold tracking-more-wider text-sm">
-                                    ···
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-    
-                </div>
-            </div>
+  {/* Bottom Right Circle overlapping */}
+  <div className='absolute -bottom-2 -right-10 w-36 h-36 bg-white/5 rounded-full z-20'></div>
+
+  <div className='flex flex-row justify-between items-center'>
+
+    <div className='space-y-2'>
+
+      <h1 className='font-light'>Cardholder Name</h1>
+      <h2 className='md:font-semibold'>Walter Disney</h2>
+
+    </div>
+
+ <Image className='w-14 h-14 z-50' width={56} height={56} alt="card-logo" src="/card-logo.png" />
+
+  </div>
+
+  <div className='w-full flex justify-center items-center '>
+<h1 className='text-2xl font-semibold'>1234 5678 5645 1724</h1>
+  </div>
+   
+  <div className='flex flex-row justify-between'>
+
+    <p >
+  <span className="block font-light">Valid</span>
+  <span className="block">11/18</span>
+</p>
+
+  <p >
+  <span className="block font-light">Expiry</span>
+  <span className="block">12/28</span>
+</p>
+
+  <p >
+  <span className="block font-light">CVV</span>
+  <span className="block">...</span>
+</p>
+
+  </div>
+ 
+</div>
     
   )
 }

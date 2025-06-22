@@ -1,5 +1,6 @@
 
 import React from 'react'
+import CrediCard from './CrediCard'
 
 
 
@@ -10,11 +11,12 @@ const Payments = () => {
    
 
       {/* Inner content with padding and background */}
-      <div className="relative z-10 flex flex-col justify-center h-72 w-full  rounded-lg dark:bg-slate-950 bg-slate-100 text-black text-sm font-medium dark:text-white backdrop-blur-3xl py-6 sm:px-12 px-6">
+      <div className="relative z-10 flex flex-col justify-center h-72 w-full  rounded-lg dark:bg-slate-950 bg-slate-100 text-black text-sm font-medium dark:text-white backdrop-blur-3xl py-4 md:px-4 lg:px-12 px-2">
 
         
          
-       
+   <CrediCard />
+
       
 
 
