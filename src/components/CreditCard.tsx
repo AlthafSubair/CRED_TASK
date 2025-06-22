@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-const CrediCard = () => {
+const CreditCard = () => {
   return (
   <div className='w-full flex flex-col justify-between relative h-52 rounded-md text-white  overflow-clip bg-[linear-gradient(to_right,#e7029a_0%,#f472b6_80%)] px-4 py-4'>
 
@@ -25,7 +25,7 @@ const CrediCard = () => {
   </div>
 
   <div className='w-full flex justify-center items-center '>
-<h1 className='text-2xl font-semibold'>1234 5678 5645 1724</h1>
+<h1 className='xl:text-2xl lg:text-xl text-2xl font-semibold'>1234 5678 5645 1724</h1>
   </div>
    
   <div className='flex flex-row justify-between'>
@@ -52,4 +52,4 @@ const CrediCard = () => {
   )
 }
 
-export default CrediCard
+export default CreditCard
