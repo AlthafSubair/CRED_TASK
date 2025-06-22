@@ -12,7 +12,7 @@ const Profile = () => {
       <div className="relative z-10 flex flex-col w-full h-72 items-center justify-center rounded-lg dark:bg-slate-950 bg-slate-100 text-black text-sm font-medium dark:text-white backdrop-blur-3xl p-4">
 
 {/* Avatar */}
-        <div className='p-[4px] rounded-full bg-gradient-to-tl from-slate-800 via-violet-500 to-zinc-400'>
+        <div className='p-[4px] rounded-full bg-[linear-gradient(to_right,#e7029a_0%,#f472b6_40%,#bd5fff_80%,#e7029a_100%)]'>
           <div className="w-28 h-28 rounded-full  overflow-hidden relative">
             <Image
               src="/avatar.jpg"

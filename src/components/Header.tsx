@@ -7,7 +7,7 @@ const Header = () => {
       
     
 
-        <h1 className='bg-gradient-to-tl from-slate-800 via-violet-500 to-zinc-400 bg-clip-text text-transparent sm:text-3xl md:text-4xl text-2xl font-bold'>
+        <h1 className='bg-[linear-gradient(to_right,#e7029a_0%,#f472b6_40%,#bd5fff_80%,#e7029a_100%)] bg-clip-text text-transparent sm:text-3xl md:text-4xl text-2xl font-bold'>
             DashBoard
         </h1>
 
