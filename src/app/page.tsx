@@ -6,6 +6,7 @@ import HeroSection from "@/components/HeroSection";
 
 
 
+
 export default function Home() {
 
 
@@ -22,6 +23,8 @@ export default function Home() {
         <Header />
 
        <HeroSection />
+
+      
 
       </div>
 

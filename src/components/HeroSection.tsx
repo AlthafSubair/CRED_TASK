@@ -2,6 +2,8 @@ import React from 'react'
 import Profile from './Profile'
 import BalanceAmount from './BalanceAmount'
 import RewardPoints from './RewardPoints'
+import Payments from './Payments'
+
 
 const HeroSection = () => {
   return (
@@ -14,6 +16,9 @@ const HeroSection = () => {
   </div>
   <div className="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.333rem)]">
    <RewardPoints />
+  </div>
+  <div className="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.333rem)]">
+   <Payments />
   </div>
     </div>
   )
