@@ -24,7 +24,7 @@ const ProgressBar = () => {
           initial={{ width: 0 }}
           animate={controls}
           transition={{ duration: 1, ease: "easeIn" }}
-          className="relative bg-gradient-to-r from-slate-800 via-violet-500 to-zinc-400 h-3.5 rounded-3xl"
+          className="relative bg-gradient-to-l from-slate-800 via-violet-500 to-zinc-400 h-3.5 rounded-3xl"
           role="progressbar"
           aria-valuenow={progress}
           aria-valuemin={0}
