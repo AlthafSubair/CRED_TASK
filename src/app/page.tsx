@@ -14,14 +14,16 @@ export default function Home() {
 
 
   return (
-    <main className="min-h-screen bg-[#f3f3f6] dark:bg-[#03030c]">
+    <main className="min-h-screen bg-[#f3f3f6] dark:bg-[#03030c] relative overflow-hidden">
 
       {/*  BackGround  */}
+      
 
       <Background />
 
 
       <div className="relative z-10 flex  md:px-4 w-full flex-col">
+        
 
         <Header />
 

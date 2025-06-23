@@ -1,9 +1,34 @@
 
-import React from 'react'
+import { usePaymentStore } from '@/store/paymentStore'
+import React, { useEffect, useState } from 'react'
 
 const BalanceAmount = () => {
 
-  
+  const {amount} = usePaymentStore()
+  const [balance, setBalance] = useState(amount)
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setBalance((prev) => {
+      if (prev === amount) {
+        clearInterval(interval);
+        return prev;
+      }
+
+      const diff = amount - prev;
+      const step = diff > 0 ? 1 : -1;
+      const next = prev + step;
+
+      if (step > 0 && next >= amount) clearInterval(interval);
+      if (step < 0 && next <= amount) clearInterval(interval);
+
+      return next;
+    });
+  }, 10);
+
+  return () => clearInterval(interval);
+}, [amount]);
+
 
   return (
     <section className="relative flex justify-center items-center overflow-hidden rounded-lg p-[3px] focus:outline-none w-full border dark:border-slate-800 border-slate-300">
@@ -15,7 +40,7 @@ const BalanceAmount = () => {
           <div>
             <h3 className='dark:text-slate-400 text-gray-600 font-semibold py-2'>Available Balance</h3>
 
-            <h1 className='text-4xl font-bold'>$ 1600</h1>
+            <h1 className='text-4xl font-bold'>$ {balance}</h1>
 
           </div>
 

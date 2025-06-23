@@ -2,12 +2,14 @@ import React from 'react'
 
 interface Props {
   Icon: React.ComponentType<{ className?: string; size?: number }>;
+  Badge?:React.ComponentType<{ className?: string; size?: number }>
+  alert: string;
   title: string;
   desc: string;
   CTA: string;
 }
 
-const Offers = ({Icon, title, desc, CTA}:Props) => {
+const Offers = ({Icon, title, desc, CTA, alert, Badge}:Props) => {
   return (
      <section className="relative  inline-flex overflow-hidden rounded-lg p-[3px] focus:outline-none w-full group border dark:border-slate-800 border-slate-300">
   {/* Spinning gradient border shown on hover */}
@@ -17,8 +19,13 @@ const Offers = ({Icon, title, desc, CTA}:Props) => {
    <div className="relative z-10 flex flex-col w-full  rounded-lg dark:bg-slate-950 bg-slate-100 text-black text-sm font-medium dark:text-white backdrop-blur-3xl ">
 
 
-    <div className='absolute right-0 bg-[conic-gradient(from_0deg_at_50%_50%,#e7029a_0%,#f472b6_50%,#bd5fff_100%,#e7029a_100%)] rounded-tr-md px-2 py-1'>
-      ⏰ 2 days left
+    <div className='absolute right-0 flex flex-row gap-2 bg-[#e7029a] text-white rounded-tr-md px-2 py-1'>
+      <div>
+        {
+        Badge && <Badge size={20} className='text-white' />
+      }
+      </div>
+      <p>{alert}</p>
     </div>
 
    <div className='flex flex-row  items-center'>
