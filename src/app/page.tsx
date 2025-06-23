@@ -3,6 +3,7 @@ import Background from "@/components/Background";
 import BillsAndRecharge from "@/components/BillsAndRecharge";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import OffersAndRewards from "@/components/OffersAndRewards";
 
 
 
@@ -26,6 +27,8 @@ export default function Home() {
        <HeroSection />
 
 <BillsAndRecharge />
+
+<OffersAndRewards />
 
       </div>
 
