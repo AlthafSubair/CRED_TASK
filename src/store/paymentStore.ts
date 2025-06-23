@@ -1,11 +1,11 @@
 
-
 // stores/usePaymentStore.ts
 import { create } from 'zustand';
 
 interface PaymentStore {
   amount: number;
   deposit: (value: number) => void;
+  pay: (value: number) => void;
 }
 
 export const usePaymentStore = create<PaymentStore>((set) => ({
@@ -14,8 +14,9 @@ export const usePaymentStore = create<PaymentStore>((set) => ({
     set((state) => ({
       amount: state.amount + value,
     })),
-  pay: (value: number) => 
+  pay: (value: number) =>
     set((state) => ({
-      amount: state.amount - value
-    }))  
+      amount: state.amount - value,
+    })),
 }));
+

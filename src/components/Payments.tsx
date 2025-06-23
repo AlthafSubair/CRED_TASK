@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import CrediCard from './CreditCard'
 import { usePaymentStore } from '@/store/paymentStore'
+import { useXPStore } from '@/store/xpStore';
 
 
 
@@ -9,6 +10,7 @@ const Payments = () => {
 
    const [inputAmount, setInputAmount] = useState('');
   const { deposit } = usePaymentStore();
+  const { inc } = useXPStore();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,9 +18,11 @@ const Payments = () => {
     if (!isNaN(value) && value > 0) {
       deposit(value);
       setInputAmount('');
+      inc(10)
     }
   };
 
+  
 
 
   return (

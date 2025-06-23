@@ -2,9 +2,12 @@
 import React, { useState } from 'react'
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import { useXPStore } from '@/store/xpStore';
 const ProgressBar = () => {
 
-   const [progress, setProgress] = useState(50); // Initial progress
+  const {xp} = useXPStore()
+
+   const [progress, setProgress] = useState(xp); // Initial progress
   const controls = useAnimation();
 
   useEffect(() => {
@@ -14,6 +17,8 @@ const ProgressBar = () => {
   const handleIncrease = () => {
     setProgress((prev) => Math.min(prev + 15, 100)); // Cap at 100%
   };
+
+  console.log(xp,progress)
 
   return (
     <div className='pb-2 flex flex-col justify-center items-center w-full px-12 gap-2'>
