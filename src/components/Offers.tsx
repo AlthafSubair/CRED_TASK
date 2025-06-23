@@ -15,6 +15,12 @@ const Offers = ({Icon, title, desc, CTA}:Props) => {
 
   {/* Inner content */}
    <div className="relative z-10 flex flex-col w-full  rounded-lg dark:bg-slate-950 bg-slate-100 text-black text-sm font-medium dark:text-white backdrop-blur-3xl ">
+
+
+    <div className='absolute right-0 bg-[conic-gradient(from_0deg_at_50%_50%,#e7029a_0%,#f472b6_50%,#bd5fff_100%,#e7029a_100%)] rounded-tr-md px-2 py-1'>
+      ⏰ 2 days left
+    </div>
+
    <div className='flex flex-row  items-center'>
         <div className="w-10 h-10 flex justify-center items-center m-4 rounded-md shadow-lg dark:bg-gray-900">
             <Icon size={24} className="text-[#e7029a]"/>

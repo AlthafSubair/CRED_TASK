@@ -1,6 +1,5 @@
 import React from 'react'
 import Offers from './Offers'
-import { RiDiscountPercentFill } from "react-icons/ri";
 import RefferAndEarn from './RefferAndEarn';
 import { BiFoodMenu } from 'react-icons/bi';
 import { TbFlame } from 'react-icons/tb';
@@ -17,7 +16,7 @@ const OffersAndRewards = () => {
         <h1 className='text-black dark:text-white md:text-3xl sm:text-xl text-lg font-bold px-4 md:px-0'>Offers & Rewards</h1>
 
 
-<div className='md:px-0 p-4 flex sm:flex-row flex-col flex-wrap gap-4 my-4'>
+<div className='md:px-0 p-4 flex sm:flex-row flex-col flex-wrap gap-4 mt-4'>
 
   <div className='w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.666rem)]'>
          <Offers Icon={BiFoodMenu} CTA={"Claim Now"} title={" 20% Off on Zomato Orders"} desc={"Enjoy flat 20% off on your next food order. Valid for orders above ₹299.🍔 Delivered with taste."}/>

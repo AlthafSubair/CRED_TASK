@@ -1,6 +1,7 @@
 "use client"
 import Background from "@/components/Background";
 import BillsAndRecharge from "@/components/BillsAndRecharge";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import OffersAndRewards from "@/components/OffersAndRewards";
@@ -24,11 +25,13 @@ export default function Home() {
 
         <Header />
 
-       <HeroSection />
+        <HeroSection />
 
-<BillsAndRecharge />
+        <BillsAndRecharge />
 
-<OffersAndRewards />
+        <OffersAndRewards />
+
+        <Footer />
 
       </div>
 
