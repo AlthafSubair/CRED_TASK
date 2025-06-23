@@ -14,9 +14,12 @@ const ProgressBar = () => {
     controls.start({ width: `${progress}%` });
   }, [progress, controls]);
 
-  const handleIncrease = () => {
-    setProgress((prev) => Math.min(prev + 15, 100)); // Cap at 100%
-  };
+ 
+
+  useEffect(()=>{
+    const diff = xp - progress
+    setProgress((prev) => prev + diff)
+  },[xp])
 
   console.log(xp,progress)
 
