@@ -1,19 +1,22 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useXPStore } from "@/store/xpStore";
 
 const ProgressBar = () => {
-  const { xp } = useXPStore(); // 🧠 Zustand XP state
-  const [progress, setProgress] = useState(xp); // 📊 Local progress state
-  const controls = useAnimation(); // 🎮 Animation controller
+  const { xp, level } = useXPStore();
+  const [progress, setProgress] = useState(xp);
+  const controls = useAnimation();
+  const [showLevelUp, setShowLevelUp] = useState(false);
 
-  // ⏱ Animate when progress changes
+  const prevLevelRef = useRef(level); // ⏪ Track previous level
+
+  // Animate progress bar width
   useEffect(() => {
     controls.start({ width: `${progress}%` });
   }, [progress, controls]);
 
-  // 📈 Update progress when XP changes
+  // Smooth progress update
   useEffect(() => {
     if (xp !== progress) {
       const increment = () => {
@@ -22,20 +25,41 @@ const ProgressBar = () => {
           return xp;
         });
       };
-
-      const interval = setInterval(increment, 10); // Smooth step animation
+      const interval = setInterval(increment, 10);
       return () => clearInterval(interval);
     }
   }, [xp, progress]);
 
+  // Show "Level Up" ONLY when level increases
+  useEffect(() => {
+    if (level > prevLevelRef.current) {
+      setShowLevelUp(true);
+      const timeout = setTimeout(() => setShowLevelUp(false), 2000);
+      prevLevelRef.current = level; // 🔁 update previous level
+      return () => clearTimeout(timeout);
+    }
+  }, [level]);
+
   return (
-    <div className="pb-2 flex flex-col justify-center items-center w-full px-12 gap-2">
-      {/* Level text */}
-      <h3 className="text-slate-500 mt-2">Level 2</h3>
+    <div className="relative pb-2 flex flex-col justify-center items-center w-full px-12 gap-2">
+      {/* Level Up Effect */}
+      {showLevelUp && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1.2 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6 }}
+          className="absolute -top-4 text-pink-500 font-bold text-xl z-10"
+        >
+          🎉 Level Up! 🎉
+        </motion.div>
+      )}
+
+      {/* Level Display */}
+      <h3 className="text-slate-500 mt-6">Level {level}</h3>
 
       {/* Progress Track */}
       <div className="relative w-full dark:bg-gray-100 bg-gray-300 rounded-3xl h-3.5 group overflow-hidden">
-        {/* Progress Fill */}
         <motion.div
           initial={{ width: 0 }}
           animate={controls}

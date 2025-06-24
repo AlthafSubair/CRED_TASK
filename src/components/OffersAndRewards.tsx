@@ -11,7 +11,7 @@ const OffersAndRewards = () => {
   const [offers, setOffers] = useState(offersData);
   const [popUp, setPopUp] = useState(false);
 
-  const { inc } = useXPStore(); // Increase XP
+  const { incXP } = useXPStore(); // Increase XP
   const { theme } = useThemeStore(); // For toast styling
 
   // 🎯 Handle when offer is claimed
@@ -20,7 +20,7 @@ const OffersAndRewards = () => {
     setOffers((prev) => prev.filter((offer) => offer?.id !== id));
 
     // Add XP
-    inc(value);
+    incXP(value);
 
     // Show XP progress popup
     setPopUp(true);
