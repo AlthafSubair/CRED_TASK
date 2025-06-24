@@ -7,6 +7,7 @@ import { useRewardStore } from '@/store/RewardStore';
 
 
 
+
 const Payments = () => {
 
    const [inputAmount, setInputAmount] = useState('');

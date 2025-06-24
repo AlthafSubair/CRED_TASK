@@ -5,6 +5,7 @@ import DashboardSkeleton from "@/components/DashboardSkeleton";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -28,7 +29,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#f3f3f6] dark:bg-[#03030c] relative overflow-hidden">
 
       {/*  BackGround  */}
-      
+      <Toaster position="top-center" />
 
       <Background />
 
