@@ -9,7 +9,7 @@ interface XPStore {
 }
 
 export const useXPStore = create<XPStore>((set) => ({
-  xp: 30,
+  xp: 50,
   level: 1,
   incXP: (amount) =>
     set((state) => {
