@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import React from 'react'
-import ProgressBar from './ProgressBar'
+import Image from "next/image";
+import React from "react";
+import ProgressBar from "./ProgressBar";
 
 const Profile = () => {
   return (
@@ -10,9 +10,8 @@ const Profile = () => {
 
       {/* Inner content with padding and background */}
       <div className="relative z-10 flex flex-col w-full h-72 items-center justify-center rounded-lg dark:bg-slate-950 bg-slate-100 text-black text-sm font-medium dark:text-white backdrop-blur-3xl p-4">
-
-{/* Avatar */}
-        <div className='p-[4px] rounded-full bg-[linear-gradient(to_right,#e7029a_0%,#f472b6_40%,#bd5fff_80%,#e7029a_100%)]'>
+        {/* Avatar */}
+        <div className="p-[4px] rounded-full bg-[linear-gradient(to_right,#e7029a_0%,#f472b6_40%,#bd5fff_80%,#e7029a_100%)]">
           <div className="w-28 h-28 rounded-full  overflow-hidden relative">
             <Image
               src="/avatar.jpg"
@@ -23,20 +22,16 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className='mt-4'>
-          <h1 className='lg:text-2xl md:text-xl text-lg'>
-            Walter Disney
-          </h1>
+        {/* UserName */}
+        <div className="mt-4">
+          <h1 className="lg:text-2xl md:text-xl text-lg">Walter Disney</h1>
         </div>
 
+        {/* XP progress bar */}
         <ProgressBar />
-
       </div>
-
     </section>
+  );
+};
 
-
-  )
-}
-
-export default Profile
+export default Profile;

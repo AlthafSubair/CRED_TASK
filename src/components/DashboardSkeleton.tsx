@@ -5,11 +5,11 @@ import OffersAndRewardsSkeleton from './OffersAndRewardsSkeleton'
 
 const DashboardSkeleton = () => {
   return (
-   <>
-         <HeroSectionSkeleton />
-         <BillsAndRechargeSkeleton />
-         <OffersAndRewardsSkeleton />
-   </>
+    <>
+      <HeroSectionSkeleton />
+      <BillsAndRechargeSkeleton />
+      <OffersAndRewardsSkeleton />
+    </>
   )
 }
 

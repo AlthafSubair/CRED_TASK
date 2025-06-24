@@ -2,6 +2,7 @@ import React from 'react'
 
 const Background = () => {
   return (
+    // Lined Backround
           <div className="absolute inset-0">
         <div className="relative h-full w-full bg-[#f3f3f6] dark:bg-[#03030c] 
           [&>div]:absolute [&>div]:inset-0 

@@ -64,12 +64,16 @@ const XpProgressPopUp = ({ onClose }: { onClose: () => void }) => {
             transition={{ duration: 0.3 }}
             className="relative z-10 flex flex-col w-full h-72 items-center justify-center rounded-lg dark:bg-slate-950 bg-slate-100 text-black text-sm font-medium dark:text-white backdrop-blur-3xl p-4"
           >
-            {/* Moved inside safely */}
+            {/* XP Ribbon */}
             <div className="absolute top-3 right-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-3 py-1 rounded-full shadow-lg font-semibold text-xs">
               +20 XP Points
             </div>
 
+            {/* XP Progress bar */}
+
             <ProgressBar />
+
+            {/* Button */}
 
             <div className="mt-6">
               <button

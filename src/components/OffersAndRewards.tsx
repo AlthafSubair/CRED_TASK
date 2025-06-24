@@ -1,43 +1,52 @@
-import React, { useState } from 'react'
-import Offers from './Offers'
-import RefferAndEarn from './RefferAndEarn'
-import { offersData } from '@/database/Offers'
-import { useXPStore } from '@/store/xpStore'
-import toast from 'react-hot-toast'
-import { useThemeStore } from '@/store/themeStore'
-import XpProgressPopUp from './XpProgressPopUp'
-
+import React, { useState } from 'react';
+import Offers from './Offers';
+import RefferAndEarn from './RefferAndEarn';
+import { offersData } from '@/database/Offers';
+import { useXPStore } from '@/store/xpStore';
+import toast from 'react-hot-toast';
+import { useThemeStore } from '@/store/themeStore';
+import XpProgressPopUp from './XpProgressPopUp';
 
 const OffersAndRewards = () => {
+  const [offers, setOffers] = useState(offersData);
+  const [popUp, setPopUp] = useState(false);
 
-const [offers, setOffers] = useState(offersData)
-const [popUp, setPopUp] = useState(false)
-const { inc } = useXPStore()
-const { theme } = useThemeStore()
+  const { inc } = useXPStore(); // Increase XP
+  const { theme } = useThemeStore(); // For toast styling
 
-const handleClaim = (id: number, value: number) =>{
+  // 🎯 Handle when offer is claimed
+  const handleClaim = (id: number, value: number) => {
+    // Remove claimed offer
+    setOffers((prev) => prev.filter((offer) => offer?.id !== id));
 
-  setOffers(offers.filter((offer) => offer?.id !== id))
-  inc(value)
-  setPopUp(true)
-    navigator.vibrate?.(150) // vibrate mobile
-      toast.success("Offer claimed Successful!",{
-        style: {
-    borderRadius: '10px',
-    background: theme === "dark" ? '#020618' : '#f1f5f9', 
-    color: theme === "dark" ? '#f9fafb' : '#1e293b',       
-  },
-      })
-}
+    // Add XP
+    inc(value);
+
+    // Show XP progress popup
+    setPopUp(true);
+
+    // Mobile vibration feedback
+    navigator.vibrate?.(150);
+
+    // Toast notification with theme-aware styling
+    toast.success('Offer claimed Successful!', {
+      style: {
+        borderRadius: '10px',
+        background: theme === 'dark' ? '#020618' : '#f1f5f9',
+        color: theme === 'dark' ? '#f9fafb' : '#1e293b',
+      },
+    });
+  };
 
   return (
     <section className="pb-8">
+      {/* Section Heading */}
       <h1 className="text-black dark:text-white md:text-3xl sm:text-xl text-lg font-bold px-4 md:px-0">
         Offers & Rewards
       </h1>
 
-      <div className="md:px-0 p-4 flex sm:flex-row flex-col flex-wrap gap-4 mt-4">
-        {/* Render 5 offers */}
+      {/* Offers List */}
+      <div className="md:px-0 p-4 flex flex-wrap gap-4 mt-4">
         {offers.map((offer) => (
           <div
             key={offer.id}
@@ -56,20 +65,17 @@ const handleClaim = (id: number, value: number) =>{
           </div>
         ))}
 
-        {/* Render custom RefferAndEarn block as 6th item */}
+        {/* 👥 Refer and Earn block (always last card) */}
         <div className="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.666rem)]">
           <RefferAndEarn />
         </div>
 
-{
-  popUp &&(
-    <XpProgressPopUp onClose={()=>setPopUp(false)}/>
-  )}
-
-
+        {/* 🎉 XP Progress Modal */}
+        {popUp && <XpProgressPopUp onClose={() => setPopUp(false)} />}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default OffersAndRewards
+export default OffersAndRewards;
+

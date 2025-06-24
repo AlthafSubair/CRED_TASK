@@ -7,9 +7,7 @@ const Dashboard = () => {
     return (
         <>
             <HeroSection />
-
             <BillsAndRecharge />
-
             <OffersAndRewards />
         </>
     )

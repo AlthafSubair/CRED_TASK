@@ -39,7 +39,7 @@ export const offersData: OfferItem[] = [
   {
     id: 3,
     Icon: FaSpotify,
-    alert: 'XP Bonus: +300',
+    alert: 'XP Bonus: +20',
     CTA: 'Level Up to Claim',
     title: '1-Month Spotify Premium',
     desc: 'Get 1 month of ad-free music when you level up to Level 4.🎧 Your soundtrack to success starts here.',
@@ -56,7 +56,7 @@ export const offersData: OfferItem[] = [
   {
     id: 5,
     Icon: MdMovie,
-    alert: 'XP Bonus: +500',
+    alert: 'XP Bonus: +20',
     CTA: 'Unlock Now',
     title: '3-Month Amazon Prime',
     desc: 'Stream your favorites, on us. Reach 8000 XP and unlock 3 months of Prime Video.',
