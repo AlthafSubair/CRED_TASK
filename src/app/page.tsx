@@ -29,7 +29,13 @@ export default function Home() {
     <main className="min-h-screen bg-[#f3f3f6] dark:bg-[#03030c] relative overflow-hidden">
 
       {/*  BackGround  */}
-      <Toaster position="top-center" />
+     <Toaster
+  position="top-center"
+  toastOptions={{
+    duration: 3000,
+  }}
+
+/>
 
       <Background />
 

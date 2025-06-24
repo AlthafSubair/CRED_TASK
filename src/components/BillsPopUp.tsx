@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaHandshake } from 'react-icons/fa6'
 import { toast } from 'react-hot-toast'
+import { useThemeStore } from '@/store/themeStore'
 
 interface SelectedBill {
   id: number
@@ -17,6 +18,7 @@ interface BillsPopUpProps {
 
 const BillsPopUp = ({ handleBillPayment, selectedBill, setSelectedBill }: BillsPopUpProps) => {
 
+  const { theme } = useThemeStore()
   // ESC key closes modal
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -30,7 +32,13 @@ const BillsPopUp = ({ handleBillPayment, selectedBill, setSelectedBill }: BillsP
 
   const handlePay = () => {
     navigator.vibrate?.(150) // vibrate mobile
-    toast.success("Payment Successful!")
+    toast.success("Payment Successful!",{
+        style: {
+    borderRadius: '10px',
+    background: theme === "dark" ? '#020618' : '#f1f5f9', 
+    color: theme === "dark" ? '#f9fafb' : '#1e293b',       
+  },
+      })
     handleBillPayment(selectedBill.amount)
   }
 

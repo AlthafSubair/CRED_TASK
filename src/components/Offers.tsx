@@ -1,20 +1,22 @@
-import { useXPStore } from '@/store/xpStore';
+
 import React from 'react'
 
 interface Props {
+  id: number;
   Icon: React.ComponentType<{ className?: string; size?: number }>;
   Badge?:React.ComponentType<{ className?: string; size?: number }>
   alert: string;
   title: string;
   desc: string;
   CTA: string;
+  handleClaim: (id: number, value: number) => void;
 }
 
 
 
-const Offers = ({Icon, title, desc, CTA, alert, Badge}:Props) => {
+const Offers = ({id, Icon, title, desc, CTA, alert, Badge, handleClaim}:Props) => {
 
-  const { inc } = useXPStore()
+  
 
   return (
      <section className="relative  inline-flex overflow-hidden rounded-lg p-[3px] focus:outline-none w-full group border dark:border-slate-800 border-slate-300">
@@ -51,7 +53,7 @@ const Offers = ({Icon, title, desc, CTA, alert, Badge}:Props) => {
 
 <div className='mx-12 flex justify-center items-center my-4'>
 <button
-onClick={() => (inc(10))}
+onClick={() => (handleClaim(id, 10))}
   className="group relative inline-flex overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-slate-50"
 >
   {/* Outer spinning gradient border */}

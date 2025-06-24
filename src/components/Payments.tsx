@@ -4,6 +4,7 @@ import CrediCard from './CreditCard'
 import { usePaymentStore } from '@/store/paymentStore'
 import { useRewardStore } from '@/store/RewardStore';
 import toast from 'react-hot-toast';
+import { useThemeStore } from '@/store/themeStore';
 
 
 
@@ -14,6 +15,7 @@ const Payments = () => {
    const [inputAmount, setInputAmount] = useState('');
   const { deposit } = usePaymentStore();
   const { update } = useRewardStore()
+  const { theme } = useThemeStore()
   
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,7 +24,13 @@ const Payments = () => {
     if (!isNaN(value) && value > 0) {
       deposit(value);
         navigator.vibrate?.(150) // vibrate mobile
-    toast.success("Payment Successful!")
+    toast.success("Payment Successful!",{
+        style: {
+    borderRadius: '10px',
+    background: theme === "dark" ? '#020618' : '#f1f5f9', 
+    color: theme === "dark" ? '#f9fafb' : '#1e293b',       
+  },
+      })
       setInputAmount('');
       update(40)
     }
