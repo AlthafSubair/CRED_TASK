@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import CrediCard from './CreditCard'
 import { usePaymentStore } from '@/store/paymentStore'
 import { useRewardStore } from '@/store/RewardStore';
+import toast from 'react-hot-toast';
 
 
 
@@ -20,6 +21,8 @@ const Payments = () => {
     const value = parseFloat(inputAmount);
     if (!isNaN(value) && value > 0) {
       deposit(value);
+        navigator.vibrate?.(150) // vibrate mobile
+    toast.success("Payment Successful!")
       setInputAmount('');
       update(40)
     }
