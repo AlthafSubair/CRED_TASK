@@ -4,6 +4,7 @@ import Recharges from './Recharges'
 import { usePaymentStore } from '@/store/paymentStore'
 import { useRewardStore } from '@/store/RewardStore'
 import BillsPopUp from './BillsPopUp'
+import RewradProgessPopup from './RewradProgressPopup'
 
 interface SelectedBill {
   id: number
@@ -15,6 +16,8 @@ const BillsAndRecharge = () => {
   const { pay } = usePaymentStore()
   const { update } = useRewardStore()
   const [bills, setBills] = useState(rechargeOptions)
+  const [showLevelUp, setShowLevelUp] = useState(false)
+
 
   const [selectedBill, setSelectedBill] = useState<SelectedBill | null>(null)
 
@@ -23,6 +26,8 @@ const BillsAndRecharge = () => {
     update(20)
     setBills(bills.filter((bill) => bill?.id !== selectedBill?.id))
     setSelectedBill(null) // Close popup after payment
+     setShowLevelUp(true)
+      
   }
 
   return (
@@ -47,6 +52,11 @@ const BillsAndRecharge = () => {
       {selectedBill && (
         <BillsPopUp setSelectedBill={setSelectedBill} selectedBill={selectedBill} handleBillPayment={handleBillPayment}/>
       )}
+
+      {showLevelUp && (
+        <RewradProgessPopup onClose={() => setShowLevelUp(false)} />
+      )}
+
     </section>
   )
 }

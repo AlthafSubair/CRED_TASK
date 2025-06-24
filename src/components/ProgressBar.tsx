@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useXPStore } from '@/store/xpStore';
+
 const ProgressBar = () => {
 
   const {xp} = useXPStore()
@@ -47,14 +48,6 @@ const ProgressBar = () => {
 
       <p className='dark:text-gray-400 text-slate-400'><span className='dark:text-slate-300 text-gray-600'>{progress}</span>/100 XP</p>
 
-      {/* Button */}
-      {/* <button
-        onClick={handleIncrease}
-        className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
-      >
-        Increase Progress +15%
-      </button> */}
-     
     </div>
   )
 }

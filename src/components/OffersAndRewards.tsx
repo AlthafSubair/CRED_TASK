@@ -5,11 +5,13 @@ import { offersData } from '@/database/Offers'
 import { useXPStore } from '@/store/xpStore'
 import toast from 'react-hot-toast'
 import { useThemeStore } from '@/store/themeStore'
+import XpProgressPopUp from './XpProgressPopUp'
 
 
 const OffersAndRewards = () => {
 
 const [offers, setOffers] = useState(offersData)
+const [popUp, setPopUp] = useState(false)
 const { inc } = useXPStore()
 const { theme } = useThemeStore()
 
@@ -17,6 +19,7 @@ const handleClaim = (id: number, value: number) =>{
 
   setOffers(offers.filter((offer) => offer?.id !== id))
   inc(value)
+  setPopUp(true)
     navigator.vibrate?.(150) // vibrate mobile
       toast.success("Offer claimed Successful!",{
         style: {
@@ -57,6 +60,13 @@ const handleClaim = (id: number, value: number) =>{
         <div className="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.666rem)]">
           <RefferAndEarn />
         </div>
+
+{
+  popUp &&(
+    <XpProgressPopUp onClose={()=>setPopUp(false)}/>
+  )}
+
+
       </div>
     </section>
   )
