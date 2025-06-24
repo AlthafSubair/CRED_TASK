@@ -17,7 +17,7 @@ const Recharges = ({text, Icon}: Props) => {
     <div className="w-12 h-12 flex justify-center items-center m-4 rounded-full shadow-lg dark:bg-gray-900">
       <Icon size={24} className="text-[#e7029a]" />
     </div>
-    <h1 className='lg:text-lg font-semibold sm:text-left text-center'>{text}</h1>
+    <h1 className='lg:text-lg font-semibold sm:text-left text-center pb-1 sm:pb-0'>{text}</h1>
   </div>
 </section>
 

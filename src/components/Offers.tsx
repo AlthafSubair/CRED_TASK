@@ -28,13 +28,13 @@ const Offers = ({ id, Icon, title, desc, CTA, alert, Badge, handleClaim }: Props
 
         {/* Ribbon */}
 
-        <div className='absolute right-0 flex flex-row gap-2 bg-[linear-gradient(144deg,_#e7029a,_#f472b6_50%,_#bd5fff)] text-white rounded-tr-md px-2 py-1'>
+        <div className='absolute right-0 flex flex-row gap-2 bg-[linear-gradient(144deg,_#e7029a,_#f472b6_50%,_#bd5fff)] text-white rounded-tr-md rounded-bl-md px-2 py-1 md:text-base text-sm'>
           <div>
             {
               Badge && <Badge size={20} className='text-white' />
             }
           </div>
-          <p>{alert}</p>
+          <p className='text-sm md:font-light'>{alert}</p>
         </div>
 
         {/* CONTENT */}

@@ -34,7 +34,7 @@ const BillsAndRecharge = () => {
   return (
     <section>
       {/* 🔖 Section Heading */}
-      <h1 className="text-black dark:text-white md:text-3xl sm:text-xl text-lg font-bold px-4 md:px-0">
+      <h1 className="text-black dark:text-white md:text-3xl sm:text-xl text-lg font-bold px-4 md:px-0 pb-4 pt-2">
         Bills & Recharge
       </h1>
 
@@ -44,7 +44,7 @@ const BillsAndRecharge = () => {
           <button
             key={id}
             onClick={() => setSelectedBill({ id, text, amount })}
-            className="w-[calc(33.333%-0.999rem)] sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.999rem)] lg:w-[calc(25%-0.75rem)]"
+            className="w-[calc(33.333%-0.700rem)] sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.999rem)] lg:w-[calc(25%-0.75rem)]"
           >
             <Recharges Icon={Icon} text={text} />
           </button>

@@ -41,7 +41,7 @@ const OffersAndRewards = () => {
   return (
     <section className="pb-8">
       {/* Section Heading */}
-      <h1 className="text-black dark:text-white md:text-3xl sm:text-xl text-lg font-bold px-4 md:px-0">
+      <h1 className="text-black dark:text-white md:text-3xl sm:text-xl text-lg font-bold px-4 md:px-0  pt-2">
         Offers & Rewards
       </h1>
 
