@@ -3,7 +3,7 @@ import React from 'react'
 import { FaHandHoldingUsd } from 'react-icons/fa'
 
 const RefferAndEarn = () => {
-  const { inc } = useXPStore()
+  const { incXP} = useXPStore()
 
   return (
     // Outer container with border and gradient effect
@@ -27,7 +27,7 @@ const RefferAndEarn = () => {
           <p className="text-sm font-medium text-green-500">Unlimited invites</p>
 
           {/* Animated invite button */}
-          <button onClick={() => (inc(10))} className="group  relative cursor-default w-32 h-10  bg-[linear-gradient(144deg,_#e7029a,_#f472b6_50%,_#bd5fff)] text-white whitespace-nowrap flex flex-wrap rounded-lg overflow-hidden">
+          <button onClick={() => (incXP(10))} className="group  relative cursor-default w-32 h-10  bg-[linear-gradient(144deg,_#e7029a,_#f472b6_50%,_#bd5fff)] text-white whitespace-nowrap flex flex-wrap rounded-lg overflow-hidden">
             <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">Invite Now</span>
             <div className="w-[10px] h-[10px] blur-[5px] bg-[rgb(30,41,59)] delay-[0.2s] duration-[0.4s] hover:bg-transparent hover:delay-0 hover:duration-0 group-focus:bg-transparent group-focus:delay-[0.5s]"></div>
             <div className="w-[10px] h-[10px] blur-[5px] bg-[rgb(30,41,59)] delay-[0.2s] duration-[0.4s] hover:bg-transparent hover:delay-0 hover:duration-0 group-focus:bg-transparent group-focus:delay-[2s]"></div>
