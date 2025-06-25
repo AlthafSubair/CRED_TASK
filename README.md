@@ -88,7 +88,7 @@ App will be available at: [http://localhost:3000](http://localhost:3000)
 
 | Light Mode | Dark Mode |
 |------------|-----------|
-| ![Light](https://cred-task.vercel.app/lap-light-screenshoot.jpg) | ![Dark](https://cred-task.vercel.app/lap-dark-screenshoot.jpg) |
+| ![Light](https://cred-task.vercel.app/lap-light-screenshoot.png) | ![Dark](https://cred-task.vercel.app/lap-dark-screenshoot.png) |
 | ![Light](https://cred-task.vercel.app/mobile-light-screenshoot.jpg) | ![Dark](https://cred-task.vercel.app/mobile-dark-screenshoot.jpg) |
 
 
