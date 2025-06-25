@@ -23,7 +23,7 @@ This project is a **CRED Garage-inspired responsive web dashboard** built as par
 ---
 
 ## 🛠️ Tech Stack
-|--------------------------------------------------------------------------------------------------------|
+
 | Tech                                                             | Purpose                             |
 |------------------------------------------------------------------|-------------------------------------|
 | [Next.js](https://nextjs.org/)                                   | React framework for SSR & routing   |
@@ -32,7 +32,7 @@ This project is a **CRED Garage-inspired responsive web dashboard** built as par
 | [Zustand](https://zustand-demo.pmnd.rs/)                         | Global XP and level state           |
 | [Framer Motion](https://www.framer.com/motion/)                  | Smooth UI animations                |
 | [canvas-confetti](https://www.npmjs.com/package/canvas-confetti) | Celebration animation               |
-|--------------------------------------------------------------------------------------------------------|
+
 
 ---
 
@@ -85,6 +85,11 @@ App will be available at: [http://localhost:3000](http://localhost:3000)
 ---
 
 ## 📸 Screenshots
+
+| Light Mode | Dark Mode |
+|------------|-----------|
+| ![Light](https://cred-task.vercel.app/lap-light-screenshoot.jpg) | ![Dark](https://cred-task.vercel.app/lap-dark-screenshoot.jpg) |
+| ![Light](https://cred-task.vercel.app/mobile-light-screenshoot.jpg) | ![Dark](https://cred-task.vercel.app/mobile-dark-screenshoot.jpg) |
 
 
 ---
