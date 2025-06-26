@@ -52,8 +52,6 @@ CRED_TASK/
 │   └── xpStore.ts
 ├── public/
 ├── styles/
-├── utils/
-│   └── theme.ts
 ├── README.md
 ```
 
